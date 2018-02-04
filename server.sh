@@ -1,8 +1,7 @@
 #!/bin/bash
 
-ebloc_path="/Users/alper/aa/MyEthereumEbloc";   #PLEASE update the path of yours
-
-nohup geth --fast --networkid 23422 --datadir="$ebloc_path" --rpc --rpcaddr "localhost" --rpccorsdomain="*" --rpcport="8545" &
+ebloc_path="$HOME/MyEthereumEbloc_geth";   #PLEASE update the path of yours
+nohup geth --fast --networkid 23422 --datadir="$ebloc_path" --rpc --rpcaddr "localhost" --rpccorsdomain="*" --rpcport="8545" --port="3000" &
 
 sleep 5
 
