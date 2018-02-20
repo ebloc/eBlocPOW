@@ -1,8 +1,9 @@
 # **Connect into Private Ethereum Blockchain (eBloc)**
 
-## **Preinstallations**
+## *Geth*
+### **Preinstallations**
 
-### **Installation Instructions for Mac**
+#### **Installation Instructions for Mac**
 
 - From following link: https://nodejs.org/en/, download `9.5.0 Current`.
 
@@ -14,9 +15,9 @@ git clone https://github.com/ethereum/go-ethereum
 cd go-ethereum
 make geth
 ```
-### **Installation Instructions for Linux**
+#### **Installation Instructions for Linux**
 
-#### Node.js and Node Package Manager(npm) installation
+##### Node.js and Node Package Manager(npm) installation
 
 ```
 sudo apt-get install nodejs npm
@@ -24,7 +25,7 @@ sudo npm install pm2 -g
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-#### **Go-installation (https://github.com/golang/go/wiki/Ubuntu)**
+##### **Go-installation (https://github.com/golang/go/wiki/Ubuntu)**
 
 ```bash
 sudo add-apt-repository ppa:gophers/archive
@@ -34,7 +35,7 @@ sudo apt-get install golang-1.9-go
 
 - Put this line `export PATH=$PATH:/usr/lib/go-1.9/bin`  into `$HOME/.profile` file and do `source $HOME/.profile`
 
-#### **Geth Installation (https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)**
+##### **Geth Installation (https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)**
 
 ```bash
 sudo apt-get install git
@@ -72,9 +73,9 @@ make geth
 
 ----------------------
 
-## **eBloc Setup on Linux and macOS**
+### **eBloc Setup on Linux and macOS**
 
-### Downloading 
+#### Downloading 
 
 ```bash
 cd $HOME 
@@ -87,14 +88,14 @@ cd eth-net-intelligence-api
 npm install
 ```
 
-### Initialises a new genesis block and definition for the network 
+#### Initialises a new genesis block and definition for the network 
 :warning: Do `bash initialize.sh` only once. You do not need to do it again :warning:
 
 ```bash
 bash initialize.sh
 ```
 
-### Server run (Always run with `sudo`)
+#### Server run (Always run with `sudo`)
 
 ```bash
 sudo bash server.sh
@@ -111,7 +112,7 @@ INFO [02-12|16:22:49] Imported new chain segment               blocks=1  
 
 ```
 
-### Client run (geth console)
+#### Client run (geth console)
 
 ```bash
 bash client.sh
@@ -121,9 +122,9 @@ If you are successfully connected into `eblocGeth` network inside `geth` console
 
 -----------------
 
-### Create your Ethereum Account
+#### Create your Ethereum Account
 
-#### 1)
+##### 1)
 
 ```bash
 $ cd eblocGeth
@@ -144,7 +145,7 @@ You should see your `Keystore File (UTC / JSON)`under `keystore` directory.
 UTC--2018-02-14T10-46-54.423218000Z--a0a50a64cac0744dea5287d1025b8ef28aeff36e
 ```
 
-#### 2) 
+##### 2) 
 
 You can also create your Ethereum account inside your `geth-client`. Here your `Keystore File` will be created with root permission, `eBlocWallet` will not able to unlock it.
 
@@ -170,9 +171,9 @@ sudo chown -R $(whoami) private/keystore/UTC--...
 
 -----------------
 
-### **How to attach to eBloc Network Status (http://ebloc.cmpe.boun.edu.tr:3001)**
+#### **How to attach to eBloc Network Status (http://ebloc.cmpe.boun.edu.tr:3001)**
 
-#### To Run
+##### To Run
 
 - Please open `stats.sh` file under `eblocGeth`directory. Write your unique name instead of `mynameis`. 
 
@@ -180,7 +181,7 @@ sudo chown -R $(whoami) private/keystore/UTC--...
 
 - :warning: `geth-server` should be running on the background :warning: 
 
-#### Finally you should run following command
+##### Finally you should run following command
 
 ```
 bash stats.sh
@@ -194,7 +195,7 @@ Now, you should see your node on http://ebloc.cmpe.boun.edu.tr:3001.
 
 -----------------
 
-### **Access your Ethereum Account using eBlocWallet**
+#### **Access your Ethereum Account using eBlocWallet**
 
 In order to use `eBlocWallet`, first `sudo bash server.sh` should be executed, hence `geth-server` should run on the background. 
 
@@ -214,7 +215,7 @@ Later you should see your account information (balance, account, etc).
 
 -----------------
 
-### **Helpful commands on geth client**
+#### **Helpful commands on geth client**
 
 Please try following commands on your `geth-client` console.
 
@@ -276,8 +277,7 @@ true
 }
 ```
 
-### **Some helpful links**
+#### **Some helpful links**
 
 - [Managing your accounts](https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts)
 - [Sending Ether on geth-client](https://github.com/ethereum/go-ethereum/wiki/Sending-ether)
-
