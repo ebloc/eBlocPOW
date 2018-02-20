@@ -40,7 +40,7 @@ sudo apt-get install golang-1.9-go
 ```bash
 sudo apt-get install git
 sudo apt-get install -y build-essential libgmp3-dev golang
-git clone https://github.com/ethereum/go-ethereum 
+git clone https://github.com/ethereum/go-ethereum
 cd go-ethereum/
 git pull
 make geth
@@ -75,10 +75,10 @@ make geth
 
 ### **eBloc Setup on Linux and macOS**
 
-#### Downloading 
+#### Downloading
 
 ```bash
-cd $HOME 
+cd $HOME
 git clone https://github.com/ebloc/eblocGeth.git
 
 cd eblocGeth
@@ -88,7 +88,7 @@ cd eth-net-intelligence-api
 npm install
 ```
 
-#### Initialises a new genesis block and definition for the network 
+#### Initialises a new genesis block and definition for the network
 :warning: Do `bash initialize.sh` only once. You do not need to do it again :warning:
 
 ```bash
@@ -102,13 +102,13 @@ sudo bash server.sh
 ```
 
 - If you want to kill your server please do: `sudo killall geth`
-- You can keep track of output of your `geth-server` by running following: `sudo tail -f gethServer.out` 
+- You can keep track of output of your `geth-server` by running following: `sudo tail -f gethServer.out`
 
 ```
  sudo tail -f gethServer.out
 Password:
-INFO [02-12|16:22:34] Imported new chain segment               blocks=1  txs=0 mgas=0.000 elapsed=503.882µs mgasps=0.000  number=111203 hash=582a44…6e15dd
-INFO [02-12|16:22:49] Imported new chain segment               blocks=1  txs=0 mgas=0.000 elapsed=491.377µs mgasps=0.000  number=111204 hash=b752ec…a0725d
+INFO [02-12|16:22:34] Imported new chain segment   blocks=1  txs=0 mgas=0.000 elapsed=503.882ms mgasps=0.000  number=111203 hash=582a44...6e15dd
+INFO [02-12|16:22:49] Imported new chain segment   blocks=1  txs=0 mgas=0.000 elapsed=491.377ms mgasps=0.000  number=111204 hash=b752ec...a0725d
 
 ```
 
@@ -136,16 +136,16 @@ Repeat passphrase:
 Address: {a0a50a64cac0744dea5287d1025b8ef28aeff36e}
 ```
 
-Your new account is locked with a password. Please give a password. Do not forget this password. Please enter a difficult passphrase for your account. 
+Your new account is locked with a password. Please give a password. Do not forget this password. Please enter a difficult passphrase for your account.
 
-You should see your `Keystore File (UTC / JSON)`under `keystore` directory. 
+You should see your `Keystore File (UTC / JSON)`under `keystore` directory.
 
 ```
 [~/eblocGeth]$ ls keystore
 UTC--2018-02-14T10-46-54.423218000Z--a0a50a64cac0744dea5287d1025b8ef28aeff36e
 ```
 
-##### 2) 
+##### 2)
 
 You can also create your Ethereum account inside your `geth-client`. Here your `Keystore File` will be created with root permission, `eBlocWallet` will not able to unlock it.
 
@@ -156,7 +156,7 @@ Repeat passphrase:
 "0x7d334606c71417f944ff8ba5c09e3672066244f8"
 ```
 
-Now you should see your `Keystore File (UTC / JSON)`under `private/keystore` directory. 
+Now you should see your `Keystore File (UTC / JSON)`under `private/keystore` directory.
 
 ```
 [~/eblocGeth]$ ls private/keystore
@@ -175,11 +175,11 @@ sudo chown -R $(whoami) private/keystore/UTC--...
 
 ##### To Run
 
-- Please open `stats.sh` file under `eblocGeth`directory. Write your unique name instead of `mynameis`. 
+- Please open `stats.sh` file under `eblocGeth`directory. Write your unique name instead of `mynameis`.
 
 - :warning: Change `DATADIR` variable with path for `eth-net-intelligence-api` directory :warning:
 
-- :warning: `geth-server` should be running on the background :warning: 
+- :warning: `geth-server` should be running on the background :warning:
 
 ##### Finally you should run following command
 
@@ -187,9 +187,9 @@ sudo chown -R $(whoami) private/keystore/UTC--...
 bash stats.sh
 ```
 
-- `sudo pm2 show app` should return some output starting with `"status            │ online"`.
+- `sudo pm2 show app` should return some output starting with `"status | online`.
 
-Now, you should see your node on http://ebloc.cmpe.boun.edu.tr:3001. 
+Now, you should see your node on http://ebloc.cmpe.boun.edu.tr:3001.
 
 - If you successfully see your name, put this line `bash stats.sh` into the last line of `server.sh` file.
 
@@ -197,11 +197,11 @@ Now, you should see your node on http://ebloc.cmpe.boun.edu.tr:3001.
 
 #### **Access your Ethereum Account using eBlocWallet**
 
-In order to use `eBlocWallet`, first `sudo bash server.sh` should be executed, hence `geth-server` should run on the background. 
+In order to use `eBlocWallet`, first `sudo bash server.sh` should be executed, hence `geth-server` should run on the background.
 
 Later, open (http://ebloc.cmpe.boun.edu.tr:3002). Then on the right top corner press:
 
-`(),` => `Add Custom Node` => `Save & Use Custom Node`. 
+`(),` => `Add Custom Node` => `Save & Use Custom Node`.
 
 Now if the read warning message is removed, your eBlocWallet is connected to your `geth-server`.
 
