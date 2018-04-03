@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ensure running as root
+# Ensure running as root
 if [ "$(id -u)" != "0" ]; then
   echo "Please run: sudo bash server.sh";
   exit
@@ -9,7 +9,7 @@ fi
 PORT=3000
 pid=$(sudo lsof -n -i :$PORT | grep LISTEN| awk '{print $2}')
 if [ -n "$pid" ]; then
-  sudo kill -9 $pid
+  sudo kill -9 $pid       #sudo killall geth
 fi
 
 DATADIR=""
@@ -20,4 +20,5 @@ sleep 6
 
 echo "loadScript(\"$DATADIR"/pass.js"\")" | sudo geth --datadir "$DATADIR/private" attach ipc:$DATADIR/private/geth.ipc console
 echo "net"                                | sudo geth --datadir "$DATADIR/private" attach ipc:$DATADIR/private/geth.ipc console
+
 bash stats.sh 
