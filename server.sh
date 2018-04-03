@@ -2,7 +2,7 @@
 
 # ensure running as root
 if [ "$(id -u)" != "0" ]; then
-  echo "sudo: Please run: sudo bash server.sh";
+  echo "Please run: sudo bash server.sh";
   exit
 fi
 
