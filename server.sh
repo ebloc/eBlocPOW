@@ -8,7 +8,9 @@ fi
 
 PORT=3000
 pid=$(sudo lsof -n -i :$PORT | grep LISTEN| awk '{print $2}')
-sudo kill -9 $pid
+if [ -n "$pid" ]; then
+  sudo kill -9 $pid
+fi
 
 DATADIR=""
 nohup geth --fast --cache=1024 --datadir $DATADIR/private --port $PORT --rpcaddr 127.0.0.1 --rpc --rpcport 8545 --rpccorsdomain="*" --networkid 23422 --rpcapi eth,net,web3,personal > gethServer.out &
