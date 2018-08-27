@@ -4,5 +4,6 @@ admin.addPeer("enode://9fbac6e71e1478506987872b7d3d6de19681527971ae243044daa4422
 admin.addPeer("enode://4419bba10a6db49687986279aa5d70ff3a6eb64a34de0d71069474a76e140110bfd17f43881e2d75f06381af9b4d4bdee9ff89335ded2399bca958c5adf29992@184.73.134.188:30303");
 admin.addPeer("enode://0b157db41df19e3b5dfe36571ad34d17621f79afea313df2fc067238a8a8ecd454bae37f45632523de02f8ec73ba2121135f751c0a9e76abe4b6ec98777ec235@35.231.95.41:3001") //Google Instance
 admin.addPeer("enode://dafc5af1dab3c4d3ab3d62271103661651ec72a7ac278a2c67abddd07eb97a5b56e33507d5f301a42ab018da6bbd791c01a4cc58f46563d6924dda81c4b115ac@193.140.196.93:3000") //TETAM
+admin.addPeer("enode://0103f1b8570308102f624d20eb8c01aaeec027d6d52f1c5a7c84a401bcf86cccdf43a7a69a55a675a4a5f2d7d63f9e41b33985ca1e3d2e244687409815b4ecd8@193.140.197.66:3000") //PRC-66
 
 function checkAllBalances() { var i =0; eth.accounts.forEach( function(e){ console.log("  eth.accounts["+i+"]: " +  e + " \tbalance: " + web3.fromWei(eth.getBalance(e), "ether") + " ether"); i++; })}; checkAllBalances();
