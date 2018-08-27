@@ -16,7 +16,7 @@ DATADIR=""
 nohup geth --fast --cache=1024 --datadir $DATADIR/private --shh --port $PORT --rpcaddr 127.0.0.1 --rpc --rpcport 8545 --rpccorsdomain="*" --networkid 23422 --rpcapi admin,eth,net,web3,debug,personal,shh > gethServer.out &
 
 echo "Please wait few seconds for geth-server to be activated."
-sleep 6
+sleep 15
 
 echo "loadScript(\"$DATADIR"/pass.js"\")" | sudo geth --datadir "$DATADIR/private" attach ipc:$DATADIR/private/geth.ipc console
 echo "net"                                | sudo geth --datadir "$DATADIR/private" attach ipc:$DATADIR/private/geth.ipc console
