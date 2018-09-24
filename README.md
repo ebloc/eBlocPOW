@@ -145,13 +145,13 @@ Navigate into `eblocPOW` directory.
 :warning: Do `bash initialize.sh` only once. You do not need to do it again :warning:
 
 ```bash
-bash initialize.sh
+./initialize.sh
 ```
 
 #### Server run (Always run with `sudo`)
 
 ```bash
-sudo bash server.sh
+sudo ./server.sh
 ```
 
 - If you want to kill your server please do: `sudo killall geth`
@@ -168,7 +168,7 @@ INFO [02-12|16:22:49] Imported new chain segment   blocks=1  txs=0 mgas=0.000 el
 #### Client run (geth console)
 
 ```bash
-bash client.sh
+./client.sh
 ```
 
 If you are successfully connected into `eblocPOW` network inside `geth` console; `peerCount` should return 1 or more, after running `net` command.
@@ -237,20 +237,20 @@ sudo chown -R $(whoami) private/keystore/UTC--...
 ##### Finally you should run following command
 
 ```
-bash stats.sh
+./stats.sh
 ```
 
 - `sudo pm2 show app` should return some output starting with `"status | online`.
 
 Now, you should see your node on http://ebloc.cmpe.boun.edu.tr:3001.
 
-- If you successfully see your name, put this line `bash stats.sh` into the last line of `server.sh` file.
+- If you successfully see your name, put this line `./stats.sh` into the last line of `server.sh` file.
 
 -----------------
 
 #### **Access your Ethereum Account using eBlocWallet**
 
-In order to use `eBlocWallet`, first `sudo bash server.sh` should be executed, hence `geth-server` should run on the background.
+In order to use `eBlocWallet`, first `sudo ./server.sh` should be executed, hence `geth-server` should run on the background.
 
 Later, open (http://ebloc.cmpe.boun.edu.tr:3002). Then on the right top corner press:
 
