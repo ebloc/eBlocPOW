@@ -177,7 +177,7 @@ If you are successfully connected into `eblocPOW` network inside `geth` console;
 
 #### Create your Ethereum Account
 
-##### 1)
+**Creating an account:**
 
 ```bash
 $ cd eblocPOW
@@ -189,36 +189,36 @@ Repeat passphrase:
 Address: {a0a50a64cac0744dea5287d1025b8ef28aeff36e}
 ```
 
-Your new account is locked with a password. Please give a password. Do not forget this password. Please enter a difficult passphrase for your account.
+Your new account is locked with a password. Please give a password. Do not forget this password. Please enter a difficult passphrase for your account. 
 
-You should see your `Keystore File (UTC / JSON)`under `keystore` directory.
+You should see your `Keystore File (UTC / JSON)`under `keystore` directory. 
 
-```
-[~/eblocPOW]$ ls keystore
+```bash
+[~/eblocPOA]$ ls keystore
 UTC--2018-02-14T10-46-54.423218000Z--a0a50a64cac0744dea5287d1025b8ef28aeff36e
 ```
 
-##### 2)
+**On the console, use:**
 
 You can also create your Ethereum account inside your `geth-client`. Here your `Keystore File` will be created with root permission, `eBlocWallet` will not able to unlock it.
 
-```
+```bash
 > personal.newAccount()
 Passphrase:
 Repeat passphrase:
 "0x7d334606c71417f944ff8ba5c09e3672066244f8"
 ```
 
-Now you should see your `Keystore File (UTC / JSON)`under `private/keystore` directory.
+Now you should see your `Keystore File (UTC / JSON)`under `private/keystore` directory. 
 
-```
+```bash
 [~/eblocPOW]$ ls private/keystore
 UTC--2018-02-14T11-00-59.995395000Z--7d334606c71417f944ff8ba5c09e3672066244f8
 ```
 
 To give open acccess to the keystore file:
 
-```
+```bash
 sudo chown -R $(whoami) private/keystore/UTC--...
 ```
 
