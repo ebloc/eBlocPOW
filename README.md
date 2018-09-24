@@ -142,7 +142,7 @@ npm install
 
 Navigate into `eblocPOW` directory.
 
-:warning: Do `bash initialize.sh` only once. You do not need to do it again :warning:
+:warning: Do `./initialize.sh` only once. You do not need to do it again :warning:
 
 ```bash
 ./initialize.sh
