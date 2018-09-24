@@ -194,7 +194,7 @@ Your new account is locked with a password. Please give a password. Do not forge
 You should see your `Keystore File (UTC / JSON)`under `keystore` directory. 
 
 ```bash
-[~/eblocPOA]$ ls keystore
+[~/eblocPOW]$ ls keystore
 UTC--2018-02-14T10-46-54.423218000Z--a0a50a64cac0744dea5287d1025b8ef28aeff36e
 ```
 
