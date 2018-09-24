@@ -1,50 +1,89 @@
-# **Connect into Private Ethereum Blockchain (eBloc)**
+# **Connect into Private Ethereum Blockchain ([eBlocPOW](http://ebloc.cmpe.boun.edu.tr:3001))**
 
-## *Geth*
-### **Preinstallations**
+## **Preinstallations**
 
-#### **Installation Instructions for Mac**
+### **Installation Instructions for Mac**
 
-- From following link: https://nodejs.org/en/, download `9.5.0 Current`.
+#### Pre-requirements
+
+- If you don't have Homebrew, [install it first](https://brew.sh).
+
+- From following link: https://nodejs.org/en/, download `10.10.0 Current`.
 
 ```bash
 sudo npm install npm pm2 -g
-
 brew install go
+```
+
+#### Geth Installation building from source
+
+```
 git clone https://github.com/ethereum/go-ethereum
 cd go-ethereum
 make geth
 ```
-#### **Installation Instructions for Linux**
 
-##### Node.js and Node Package Manager(npm) installation
+:warning: If something went wrong during building from source, install `go-ethereum` using Homebrew tap. :warning:
 
+Run the following commands to add the tap and install `geth`:
+
+```bash
+brew tap ethereum/ethereum
+brew install ethereum
 ```
-sudo apt-get install nodejs npm
+
+### **Installation Instructions for Linux**
+
+#### Node.js and Node Package Manager(npm) installation
+
+```bash
+sudo apt-get install nodejs
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
 sudo npm install pm2 -g
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-##### **Go-installation (https://github.com/golang/go/wiki/Ubuntu)**
+#### **Go-installation (https://github.com/golang/go/wiki/Ubuntu)**
 
 ```bash
 sudo add-apt-repository ppa:gophers/archive
 sudo apt-get update
-sudo apt-get install golang-1.9-go
+sudo apt-get install golang-1.10-go
 ```
 
-- Put this line `export PATH=$PATH:/usr/lib/go-1.9/bin`  into `$HOME/.profile` file and do `source $HOME/.profile`
+- Put this line `export PATH=$PATH:/usr/lib/go-1.10/bin`  into `$HOME/.profile` file and do `source $HOME/.profile`
 
-##### **Geth Installation (https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)**
+#### **[Geth](https://github.com/ethereum/go-ethereum) Installation**
+
+##### Pre-requirements
 
 ```bash
 sudo apt-get install git
 sudo apt-get install -y build-essential libgmp3-dev golang
-git clone https://github.com/ethereum/go-ethereum
+```
+
+##### Building from source
+
+```bash
+git clone https://github.com/ethereum/go-ethereum 
 cd go-ethereum/
 git pull
 make geth
 ```
+
+:warning: If something went wrong during building from source install `go-ethereum` from PPA :warning:
+
+```bash
+sudo apt-get install software-properties-common
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install ethereum
+```
+
+------------
+
+#### Do following for both Linux and Mac
 
 After `go-ethereum` is installed, copy `geth` located under `go-ethereum/build/bin` into` /usr/local/bin`:
 
@@ -55,19 +94,30 @@ $ sudo cp build/bin/geth /usr/local/bin/
 $ which geth
 /usr/local/bin/geth
 ```
-Now when you just type `geth`, it should work.
 
-Please note that `Geth` version should be greater or equal than `1.7.3`.
+Please note that `Geth` version should be greater or equal than `1.8.15`.
 
 ```bash
 $ geth version|grep "Version: 1"
-Version: 1.7.3-stable
+Version: 1.8.15-stable
 ```
 
-Please note that to update `geth`, please enter into `go-ethereum` directory and do:
+Now you can jump to [eBloc Setup on Linux and macOS](https://github.com/ebloc/eblocPOA/blob/master/README.md#ebloc-setup-on-linux-and-macos).
 
-```
+##### Please note that to update `geth`, please enter into `go-ethereum` directory and do:
+
+```bash
 git pull
+make geth
+```
+
+if you face with any merging issues please do following:
+
+```bash
+latestTag=$(git describe --tags)
+
+git describe --tags #returns most recent tag
+git checkout $latestTag
 make geth
 ```
 
