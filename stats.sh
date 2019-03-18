@@ -1,6 +1,6 @@
 #!/bin/bash
 #To see your node on http://ebloc.cmpe.boun.edu.tr:3015
-DATADIR=$HOME"/eblocPOW"
+DATADIR=$HOME"/eBlocPOW"
 NAME="myNameIs"
 
 sudo pm2 delete app
