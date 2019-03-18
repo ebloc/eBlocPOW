@@ -131,9 +131,9 @@ make geth
 
 ```bash
 cd $HOME
-git clone https://github.com/ebloc/eblocPOW.git
+git clone https://github.com/ebloc/eBlocPOW.git
 
-cd eblocPOW
+cd eBlocPOW
 git clone https://github.com/cubedro/eth-net-intelligence-api
 
 cd eth-net-intelligence-api
@@ -142,7 +142,7 @@ npm install
 
 #### Initialises a new genesis block and definition for the network
 
-Navigate into `eblocPOW` directory.
+Navigate into `eBlocPOW` directory.
 
 :warning: Do `./initialize.sh` only once. You do not need to do it again :warning:
 
@@ -173,7 +173,7 @@ INFO [02-12|16:22:49] Imported new chain segment   blocks=1  txs=0 mgas=0.000 el
 ./client.sh
 ```
 
-If you are successfully connected into `eblocPOW` network inside `geth` console; `peerCount` should return 1 or more, after running `net` command.
+If you are successfully connected into `eBlocPOW` network inside `geth` console; `peerCount` should return 1 or more, after running `net` command.
 
 -----------------
 
@@ -182,7 +182,7 @@ If you are successfully connected into `eblocPOW` network inside `geth` console;
 **Creating an account:**
 
 ```bash
-$ cd eblocPOW
+$ cd eBlocPOW
 $ eblocPath="$PWD"
 $ geth --datadir="$eblocPath" account new
 Your new account is locked with a password. Please give a password. Do not forget this password.
@@ -196,7 +196,7 @@ Your new account is locked with a password. Please give a password. Do not forge
 You should see your `Keystore File (UTC / JSON)`under `keystore` directory. 
 
 ```bash
-[~/eblocPOW]$ ls keystore
+[~/eBlocPOW]$ ls keystore
 UTC--2018-02-14T10-46-54.423218000Z--a0a50a64cac0744dea5287d1025b8ef28aeff36e
 ```
 
@@ -214,7 +214,7 @@ Repeat passphrase:
 Now you should see your `Keystore File (UTC / JSON)`under `private/keystore` directory. 
 
 ```bash
-[~/eblocPOW]$ ls private/keystore
+[~/eBlocPOW]$ ls private/keystore
 UTC--2018-02-14T11-00-59.995395000Z--7d334606c71417f944ff8ba5c09e3672066244f8
 ```
 
@@ -230,7 +230,7 @@ sudo chown -R $(whoami) private/keystore/UTC--...
 
 ##### To Run
 
-- Please open `stats.sh` file under `eblocPOW`directory. Write your unique name instead of `mynameis`.
+- Please open `stats.sh` file under `eBlocPOW`directory. Write your unique name instead of `mynameis`.
 
 - :warning: Change `DATADIR` variable with path for `eth-net-intelligence-api` directory :warning:
 
@@ -260,7 +260,7 @@ Later, open (http://ebloc.cmpe.boun.edu.tr:3002). Then on the right top corner p
 
 Now if the read warning message is removed, your eBlocWallet is connected to your `geth-server`.
 
-`Send Ether and Tokes` => Select `Keystore File (UTC / JSON)`=>`SELECT WALLET FILE` (Your wallet is located under `eblocPOW/keystore` name starting with `UTC`) => `Unlock`
+`Send Ether and Tokes` => Select `Keystore File (UTC / JSON)`=>`SELECT WALLET FILE` (Your wallet is located under `eBlocPOW/keystore` name starting with `UTC`) => `Unlock`
 
 <img width="1100" alt="screen shot 2018-02-12 at 13 29 13" src="https://user-images.githubusercontent.com/18537398/36092854-dfb53d80-0ff9-11e8-9dc5-b2e788d01bd5.png">
 
